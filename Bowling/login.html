@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet">
+    <script defer src="./js/auth.js"></script>
+    <script src="./pocketbase/js-sdk-0.21.2/dist/pocketbase.umd.js"></script>
+
+    <title>OnlyBowling - index</title>
+</head>
+
+<body>
+    <header>
+        <h2>OnlyBowling</h2>
+        <img src="./img/logo.png" alt="OnlyBowling Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li id="overview" class="hidden"><a href="overview.html">Overview</a>
+            <li><a href="login.html">Login</a></li>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div id="auth-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <span id="loggedInUsername"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <div class="container-login">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button onclick="logIn()">Login</button>
+            <div id="responseMessage"></div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 OnlyBowling</p>
+        <p>Refrain from contacting us as we hate everyone</p>
+    </footer>
+</body>
+
+</html>

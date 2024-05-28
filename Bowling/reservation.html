@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./pocketbase/js-sdk-0.21.2/dist/pocketbase.umd.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <script defer src="./js/auth.js"></script>
+    <title>OnlyBowling - Reservation</title>
+</head>
+
+<body>
+    <header>
+        <h2>OnlyBowling</h2>
+        <img src="./img/logo.png" alt="OnlyBowling Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li id="overview" class="hidden"><a href="overview.html">Overview</a>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="auth-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <span id="loggedInUsername"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <div class="container-reservation">
+            <h1>Reserve Your Spot</h1>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="input-group">
+                <label for="date">Date:</label>
+                <input type="datetime-local" id="date" name="date">
+            </div>
+            <div id="reservation-duration">
+                <label for="time">Reserve Spot For:</label>
+                <select id="time" name="time">
+                    <option value="1">30 minutes</option>
+                    <option value="2">1 hour</option>
+                    <option value="3">1 hour and 30 minutes</option>
+                    <option value="4">2 hours</option>
+                    <option value="5">2 hour and 30 minutes</option>
+                    <option value="6">3 hours</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="amount_of_people">Amount of People:</label>
+                <input type="number" id="amount_of_people" name="amount_of_people" min="1" max="10">
+            </div>    
+
+            <button type="submit" onclick="checkReservation()">Reserve</button>
+            <p id="responseMessage"></p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 OnlyBowling</p>
+        <p>Refrain from contacting us as we hate everyone</p>
+    </footer>
+
+    <script src="./js/reservation.js"></script>
+</body>
+
+</html>

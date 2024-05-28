@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./pocketbase/js-sdk-0.21.2/dist/pocketbase.umd.js"></script>
+    <script defer src="./js/auth.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <title>OnlyBowling - index</title>
+</head>
+
+<body>
+    <header>
+        <h2>OnlyBowling</h2>
+        <img src="./img/logo.png" alt="OnlyBowling Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li id="overview" class="hidden"><a href="overview.html">Overview</a>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="auth-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <span id="loggedInUsername"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <h1 style="margin-bottom: 30px;">Welcome!</h1>
+        <div class="container">
+            <div class="container-text">
+                <h2>Welcome to OnlyBowling!</h2>
+                <p>Are you ready to have a great time? At OnlyBowling, it's all about fun and togetherness with friends
+                    and
+                    family. We are the place where bowling comes to life!</p>
+
+                <h2>What is OnlyBowling?</h2>
+                <p>OnlyBowling is your ultimate destination for an unforgettable bowling adventure. Whether you are a
+                    beginner or an experienced bowler, our modern bowling lanes and cozy atmosphere make everyone feel
+                    at
+                    home</p>
+
+                <h2>How does it work?</h2>
+                <p>It's simple! Reserve a lane, put on your bowling shoes, and start throwing. Whether you want to relax
+                    with friends or play a competitive game, you'll always have fun at OnlyBowling.</p>
+
+                <h2>Contact us</h2>
+                <p>Do you have questions or want to organize an event? Feel free to contact us! Our friendly team is
+                    ready
+                    to help you.</p>
+
+                <b>Ready to bowl? Come visit OnlyBowling and experience the excitement and coziness!</b>
+            </div>
+            <div class="container-cta">
+                <a href="reservation.html">Order Here!</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 OnlyBowling</p>
+        <p>Refrain from contacting us as we hate everyone</p>
+    </footer>
+</body>
+
+</html>

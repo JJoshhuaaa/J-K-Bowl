@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./pocketbase/js-sdk-0.21.2/dist/pocketbase.umd.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <script defer src="./js/auth.js"></script>
+    <title>OnlyBowling - index</title>
+</head>
+
+<body>
+    <header>
+        <h2>OnlyBowling</h2>
+        <img src="./img/logo.png" alt="OnlyBowling Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li id="overview" class="hidden"><a href="overview.html">Overview</a>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="auth-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <span id="loggedInUsername"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <h1>About Us</h1>
+        <section class="about-section">
+            <h2>Welcome to OnlyBowling</h2>
+            <p>Located in the heart of the Netherlands, OnlyBowling is the premier destination for bowling enthusiasts of all ages and skill levels. Our state-of-the-art facilities and commitment to customer satisfaction make us the top choice for both casual bowlers and competitive leagues.</p>
+            
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide a fun, safe, and inclusive environment where people can enjoy the sport of bowling. Whether you're looking to improve your game, host a memorable event, or simply have a great time with friends and family, OnlyBowling is the place to be.</p>
+            
+            <h2>Our Values</h2>
+            <ul>
+                <li><strong>Customer Satisfaction:</strong> We strive to exceed our customers' expectations with exceptional service and facilities.</li>
+                <li><strong>Community:</strong> We are committed to fostering a sense of community and providing a welcoming atmosphere for all.</li>
+                <li><strong>Excellence:</strong> We aim for excellence in everything we do, from maintaining our lanes to organizing tournaments.</li>
+                <li><strong>Innovation:</strong> We continuously seek to improve and innovate our services to provide the best experience possible.</li>
+            </ul>
+            
+            <h2>Contact Us</h2>
+            <p>If you have any questions, comments, or feedback, feel free to get in touch with us. We'd love to hear from you!</p>
+            <p>Email: contact@onlybowling.nl</p>
+            <p>Phone: +31 20 123 4567</p>
+            <p>Address: 123 Bowling Lane, Amsterdam, Netherlands</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 OnlyBowling</p>
+        <p>Refrain from contacting us as we hate everyone</p>
+    </footer>
+</body>
+
+</html>

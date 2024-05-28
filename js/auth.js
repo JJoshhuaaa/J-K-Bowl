@@ -1,4 +1,4 @@
-const pb = new PocketBase('http://87.106.133.146:8090');
+const pb = new PocketBase('https://pocketbase.solidhorizons.net:8090');
 
 function loadAuthFromLocalStorage() {
     const storedAuth = localStorage.getItem('pb_auth');

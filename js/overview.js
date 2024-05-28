@@ -1,5 +1,5 @@
 async function getReservations() {
-    const pb = new PocketBase('http://87.106.133.146:8090');
+    const pb = new PocketBase('https://pocketbase.solidhorizons.net:8090');
 
     try {
         const records = await pb.collection('reservation').getFullList({
@@ -22,7 +22,7 @@ async function getReservations() {
 }
 
 async function performSearch() {
-    const pb = new PocketBase('http://87.106.133.146:8090');
+    const pb = new PocketBase('https://pocketbase.solidhorizons.net:8090');
 
     try {
         const searchCriteria = document.getElementById('searchCriteria').value;
