@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./pocketbase/js-sdk-0.21.2/dist/pocketbase.umd.js"></script>
+    <script defer src="./js/auth.js"></script>
+    <script src="./js/overview.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <title>OnlyBowling - index</title>
+</head>
+
+<body>
+    <header>
+        <h2>OnlyBowling</h2>
+        <img src="./img/logo.png" alt="OnlyBowling Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li id="overview" class="hidden"><a href="overview.html">Overview</a>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main class="no-justify">
+        <div id="auth-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <span id="loggedInUsername"></span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+        <div id="admin-search">
+            <h3>Search Reservations</h3>
+            <select id="searchCriteria">
+                <option value="customerName">Customer Name</option>
+                <option value="customerMail">Customer Email</option>
+                <option value="date">Reservation Date</option>
+                <option value="reservationDuration">Reservation Length</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Enter search term">
+            <button type="submit" onclick="performSearch()">Search</button>
+            <div id="searchResults"></div>
+        </div>
+
+        <!-- Container to Display Reservations -->
+        <div id="reservationsContainer">
+            <h3>All Reservations</h3>
+        </div>
+        <div id="searchTable">
+        </div>
+        <script>
+            getReservations();
+        </script>
+    </main>
+    <footer>
+        <p>© 2024 OnlyBowling</p>
+        <p>Refrain from contacting us as we hate everyone</p>
+    </footer>
+</body>
+
+</html>
