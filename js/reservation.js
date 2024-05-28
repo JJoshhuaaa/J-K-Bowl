@@ -56,9 +56,15 @@ async function checkReservation() {
         const amountOfPeople = document.getElementById('amount_of_people').value;
         const timePicker = document.getElementById('date').value;
         const lengthOption = document.getElementById('time').value;
+        const givenTime = new Date(timePicker);
+        const now = new Date();
 
-        if(!validateEmail(email))
-        {
+        if (givenTime < now.getTime() + 120 * 60 * 1000) {
+            responseMessage.innerHTML = '<p>You can only reserve a spot 2 hours in advance!</p>';
+            return;
+        }
+
+        if (!validateEmail(email)) {
             responseMessage.innerHTML = '<p>Enter a valid mail address!</p>';
             return;
         }
@@ -68,14 +74,18 @@ async function checkReservation() {
 
         const pb = new PocketBase('http://87.106.133.146:8090');
 
-        const firstResult = await pb.collection('reservation').getList(1, 1, {
+        const firstResult = await pb.collection('reservation_view').getList(1, 1, {
             filter: `endDate >= "${time}" && date <= "${time}"`,
         });
 
-        const secondResult = await pb.collection('reservation').getList(1, 1, {
+        console.log(firstResult);
+
+        const secondResult = await pb.collection('reservation_view').getList(1, 1, {
             filter: `endDate >= "${timeWithLength}" && date <= "${timeWithLength}"`,
         });
 
+        console.log(secondResult);
+        
         if (firstResult.totalItems != 0 || secondResult.totalItems != 0) {
             responseMessage.innerHTML = '<p>Reservations are already found for this time!</p>';
 
@@ -93,7 +103,9 @@ async function checkReservation() {
 
         const record = await pb.collection('reservation').create(data);
 
-        alert("Reservation was made!");
+        console.log(record);
+
+        responseMessage.innerHTML = '<p>Reservation has been made!</p>';
     }
     catch (error) {
         console.log(error)
